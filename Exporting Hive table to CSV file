@@ -1,0 +1,12 @@
+--create example table in Hive
+
+set hive.exec.compress.output=false;
+CREATE TABLE IF NOT EXISTS example
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+AS
+SELECT *FROM example; --table created
+
+--Navigate to HDFS location & export as csv file
+bin/hadoop fs -cat /user/hive/example/00000_0 >> file_name.csv
