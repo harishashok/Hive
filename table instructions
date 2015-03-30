@@ -1,14 +1,14 @@
-//create a hive table//
+--create a hive table
 CREATE TABLE IF NOT EXISTS table_name(id  INT,date string,emp_name string,salary int,department string, 
 start_date string, end_date string)
 ROW FORMAT delimited
-fields terminated by ','
-STORED AS TEXTFILE;
+FIELDS TERMINATED by ','
+STORED AS textfile;
 
-//loading data into table (csv file)//
-load data local inpath '/home/WDPRO-CUSTANALYTICS-PROD/services/tables_csv/filename.csv' OVERWRITE INTO table_name;
+--loading data into table (csv file)
+load data local inpath '/home/WDPRO-CUSTANALYTICS-PROD/services/tables_csv/filename.csv' OVERWRITE INTO TABLE table_name;
 
-//create table with single field for loading text file//
+--create table with single field for loading text file//
 CREATE TABLE text_table(
 text string
 ) 
@@ -17,5 +17,5 @@ row format delimited
 FIELDS TERMINATED by '\n' 
 STORED AS textfile;
 
-//Loading single file
-load data local inpath '/home/mycomputer/Documents/'wikipedia' OVERWRITE INTO text_table;
+--Loading single file
+load data local inpath '/home/mycomputer/Documents/'wikipedia' OVERWRITE INTO TABLE text_table;
