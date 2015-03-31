@@ -8,7 +8,7 @@ STORED AS textfile;
 --loading data into table (csv file)
 load data local inpath '/home/WDPRO-CUSTANALYTICS-PROD/services/tables_csv/filename.csv' OVERWRITE INTO TABLE table_name;
 
---create table with single field for loading text file//
+--create table with single field for loading text file
 CREATE TABLE text_table(
 text string
 ) 
@@ -18,4 +18,4 @@ FIELDS TERMINATED by '\n'
 STORED AS textfile;
 
 --Loading single file
-load data local inpath '/home/mycomputer/Documents/'wikipedia' OVERWRITE INTO TABLE text_table;
+load data local inpath '/home/mycomputer/Documents/wikipedia' OVERWRITE INTO TABLE text_table;
