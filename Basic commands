@@ -7,6 +7,9 @@ hdfs dfs -ls <path>
 #to copy the files from PROD server to HDFS path 
 hdfs -dfs -put "PROD-source-path/00000_12.txt" "HDFS-destination-path"
 
+#To remove a directory from HDFS along with its files
+hdfs dfs -rm -f -R <HDFS-path>
+
 #To find out the space utilization of a file in a HDFS directory
 hadoop fs -du hdfs://n7cldhnn05.dcloud.starwave.com:9000/data/WDPRO-CUSTANALYTICS-PROD/archive/personalization/201504/
 
