@@ -1,0 +1,23 @@
+#to create a directory in HDFS 
+hdfs dfs -mkdir -p hdfs://n7cldhnn05.dcloud.starwave.com:9000/data/WDPRO-CUSTANALYTICS-PROD/archive/personalization/201504/
+
+#To list the contents in the directory
+hdfs dfs -ls <path>
+
+#to copy the files from PROD server to HDFS path 
+hdfs -dfs -put "PROD-source-path/00000_12.txt" "HDFS-destination-path"
+
+#To find out the space utilization of a file in a HDFS directory
+hadoop fs -du hdfs://n7cldhnn05.dcloud.starwave.com:9000/data/WDPRO-CUSTANALYTICS-PROD/archive/personalization/201504/
+
+**************UPLOADING AND DOWNLOADING FILES FROM HDFS*************************
+********************************************************************************
+
+#To upload a file to hdfs
+hdfs dfs -put "PROD-source-path/00000_12.txt" "HDFS-destination-path"
+
+#To download a file from HDFS Dir
+hdfs dfs -get "HDFS-Source-path" "local-destination-path"
+
+#To do a inter/intra cluster copying of HDFS files
+hadoop distcp <sourceurl> <destination url> -- look for distcp options help 
